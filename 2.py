@@ -6,7 +6,7 @@ import os
 import platform
 import pathlib
 from litellm import completion
-
+import joblib
 # 处理 Windows 和非 Windows 平台的路径问题
 plt = platform.system()
 if plt != 'Windows':
