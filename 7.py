@@ -54,7 +54,7 @@ if uploaded_file is not None:
     st.write(f'概率: {probs[pred_idx]:.2f}')
 
     # 调用大预言模型描述用户上传的花朵
-    response = completion(model='deepseek/deepseek-coder',
+    response = completion(model='deepseek/deepseek-chat',
                           messages=[
                               {"content": "你是一个优秀的python编辑助手,\n请根据用户上传的花朵,\n描述其特点和花语",
                                "role": "system"},
@@ -81,7 +81,7 @@ if features:
         st.write(f'匹配度: {row["match_score"]}')
 
         # 调用大预言模型描述推荐的花朵
-        response = completion(model='deepseek/deepseek-coder',
+        response = completion(model='deepseek/deepseek-chat',
                               messages=[
                                   {"content": "你是一个优秀的python编辑助手,\n请根据推荐的花朵,\n描述其特点和花语",
                                    "role": "system"},
