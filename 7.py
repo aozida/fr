@@ -8,6 +8,12 @@ import pathlib
 from litellm import completion
 import joblib
 
+openai_api_key = st.secrets["openai"]["api_key"]
+deepseek_api_key = st.secrets["deepseek"]["api_key"]
+# 设置API密钥
+openai.api_key = openai_api_key
+litellm.api_key = deepseek_api_key
+st.write("API密钥已设置")
 # 处理 Windows 和非 Windows 平台的路径问题
 plt = platform.system()
 if plt != 'Windows':
